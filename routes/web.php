@@ -19,9 +19,7 @@ Route::get('about', function(){
 	return view('about');
 });
 
-Route::get('contact', function(){
-	return view('contact');
-});
+
 
 Route::get('home', function(){
 	return view('home');
@@ -33,3 +31,25 @@ Route::get('action', function(){
 
 Route::get('datatable', ['uses'=>'PostController@datatable']);
 Route::get('datatable/getposts', ['as'=>'datatable.getposts','uses'=>'PostController@getPosts']);
+
+
+Route::get('student', ['uses'=>'StudentController@datatable']);
+Route::get('student/getstudent', ['as'=>'datatable.getstudent','uses'=>'StudentController@getstudent']);
+
+
+// route to show the login form
+Route::get('login', array('uses' => 'Controller@showLogin'));
+
+// route to process the form
+Route::post('login', array('uses' => 'Controller@doLogin'));
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/contact', 'contactController@index')->name('contact');
+Auth::routes();
+Route::get('/contact', 'contactController@index')->name('contact');

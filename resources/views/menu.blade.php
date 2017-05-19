@@ -16,9 +16,9 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle st" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="action">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="datatable">Action</a></li>
+                <li><a href="student">Another action</a></li>
+                <li><a href="login">Something else here</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
                 <li><a href="#">Separated link</a></li>

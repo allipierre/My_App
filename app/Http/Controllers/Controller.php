@@ -10,4 +10,18 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+
+public function showLogin()
+{
+    // show the form
+    return view('login');
+}
+
+public function doLogin()
+{
+// process the form
+	return view('welcome');
+}
+    
 }

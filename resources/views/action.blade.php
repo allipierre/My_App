@@ -88,46 +88,38 @@
 </div>
 
 
-<script>
-    $(document).ready(function(){
-        $("#myModal").on("show.bs.modal", function(e) {
-            var id = $(e.relatedTarget).data('target-id');
-            $.get( "/controller/" + id, function( data ) {
-                $(".modal-body").html(data.html);
-            });
-
-        });
-    });
-</script>
+<div class="container">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1>
+                How to use bootstrap tables to  Display data from MySQL using PHP
+            </h1>
+        </div>
 
 
-
+        <div class="panel panel-success">
+            <div class="panel-heading "> 
+            <span class=""> This Source Code Provided By<br>
+            <a href="https://www.sourcecodesite.com">SourceCodeSite.com</a> </span> 
+                
+             </div>
+                         
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                     
+                        <table  id="table"
+                                data-show-columns="true"
+                                data-height="460">
+                        </table>
+        </div>
+    </div>
+</div>              
+</div>
+</div>
+</div>
 <?php 
-$sd = DB::select('select * from user where id = ?', [1]);
-<table class="table no-margin text-center">
-          <thead>
-            <tr>
-              <th>Society ID</th>
-              <th>Society Name</th>
-              <th>Address</th>
-              <th>Secretary Name</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            @foreach($societydetails as $sd)
-            <tr>
-              <td>{{ $sd->id }}</td>
-              <td>{{ $sd->fname }}</td>
-              <td>{{ $sd->lname }}</td>
-              <td>{{ $sd->lname }}</td>
-              <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#societydetails">View All Details</button></td>
-            </tr>
-            @endforeach
-          </tbody>
-        </table>    
-
-    
+    $results = DB::select('select * from user where id = ?', [1]);
 
    
 ?>   

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 5 - Implementing datatables tutorial using yajra package</title>
+    <title>Laravel 6 - Implementing datatables tutorial using yajra package</title>
     <link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/bootstrap-3.min.css">
     <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
     <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
@@ -9,20 +9,14 @@
 
     <link rel="icon" href="https://apex.oracle.com/pls/apex/fw_consulting/r/1373/files/static/v21/favicon.ico">
 
+
   
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <link href="sticky-footer-navbar.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    
 </head>
 <body>
 <!-- Fixed navbar -->
@@ -40,11 +34,54 @@
             <th>Post Title</th>
             <th>Category</th>
             <th>Tag</th>
-            
-            
         </tr>
     </thead>
   </table>
+</div>
+
+<table id="userse" class="table no-margin text-center">
+           <thead>
+        <tr class="success">
+            <th class="success">Id</th>
+            <th>Post Title</th>
+            <th>Category</th>
+            <th>Tag</th>
+        </tr>
+    </thead>
+        </table>    
+
+
+
+
+        <div class="container">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1>
+                How to use bootstrap tables to  Display data from MySQL using PHP
+            </h1>
+        </div>
+
+
+        <div class="panel panel-success">
+            <div class="panel-heading "> 
+            <span class=""> This Source Code Provided By<br>
+            <a href="https://www.sourcecodesite.com">SourceCodeSite.com</a> </span> 
+                
+             </div>
+                         
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                     
+                        <table  id="table"
+                                data-show-columns="true"
+                                data-height="460">
+                        </table>
+        </div>
+    </div>
+</div>              
+</div>
+</div>
 </div>
 
 <script type="text/javascript">
@@ -52,18 +89,63 @@ $(document).ready(function() {
     oTable = $('#users').DataTable({
         "processing": true,
         "serverSide": true,
-        "ajax": "{{ route('datatable.getposts') }}",
+        "ajax": "{{ route('datatable.getstudent') }}",
         "columns": [
             {data: 'id', name: 'id'},
-            {data: 'title', name: 'title'},
-            {data: 'category', name: 'category'},
-            {data: 'tag', name: 'tag'}
+            {data: 'fname', name: 'fname'},
+            {data: 'lname', name: 'lname'},
+            {data: 'lname', name: 'lname'}
+        ]
+    });
 
-            
-            
+
+
+
+
+     oTables = $('#userse').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "{{ route('datatable.getstudent') }}",
+        "columns": [
+            {data: 'id', name: 'id'},
+            {data: 'fname', name: 'fname'},
+            {data: 'lname', name: 'lname'},
+            {data: 'lname', name: 'lname'}
+        ]
+    });
+
+
+
+     oTablee = $('#table').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "{{ route('datatable.getstudent') }}",
+        "columns": [
+            {data: 'id', name: 'id'},
+            {data: 'fname', name: 'fname'},
+            {data: 'lname', name: 'lname'},
+            {data: 'lname', name: 'lname'}
         ]
     });
 });
+
+
+
+   
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
 </script>
 
 <style type="text/css">
@@ -113,12 +195,18 @@ td{
 }
    
 </style>
- <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+
 
  <footer class="footer">
       <div class="container">
        @include('footer')
       </div>
     </footer>
+
+
+    
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    
 </body>
 </html>
