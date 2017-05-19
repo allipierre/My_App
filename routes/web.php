@@ -44,11 +44,11 @@ Route::get('login', array('uses' => 'Controller@showLogin'));
 Route::post('login', array('uses' => 'Controller@doLogin'));
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/contact', 'contactController@index')->name('contact');
 Auth::routes();

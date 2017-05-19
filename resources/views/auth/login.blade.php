@@ -40,10 +40,37 @@ body {
     height: 100%;
     width: 100%;
 }
+
+.navbar .sert{
+  padding-top:90px !important;
+}
+
+.btn-primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0) !important;
+    border-color: rgb(255, 0, 0) !important;
+
+    /* width: 100%; */
+}
+.navbar-default .navbar-brand {
+    color: rgb(51, 51, 51) !important;
+}
+
+.navbar-default {
+    background-color: rgb(255, 255, 255) !important;
+    border-color: rgb(231, 231, 231);
+}
+.glyphicon{
+  color:rgb(92, 184, 92);
+}
+
+.glyphicon-envelope{
+  color:black !important;
+}
                         </style>
 
 @section('content')
-<div class="container">
+<div class="container sert" style="padding-top:90px !important;">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -56,7 +83,7 @@ body {
                         <p>Lagerverwaltungssystem</p>
                     </div>
 
-                    
+
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
@@ -64,7 +91,7 @@ body {
                             <div class="col-md-6">
                              <div class="input-group">
                              <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input placeholder="Give your Email..." id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
                                 </div>
 
                                 @if ($errors->has('email'))
@@ -81,7 +108,7 @@ body {
                             <div class="col-md-6">
                             <div class="input-group">
                              <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input placeholder="Give your Email..." id="email" id="password" type="password" class="form-control" name="password" required>
                                 </div>
 
                                 @if ($errors->has('password'))
@@ -105,25 +132,29 @@ body {
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Login
+                                  <span class="glyphicon glyphicon-envelope"></span> Login
+                                </button>
+
+                                <button type="submit" class="btn btn-success">
+                                    <span class="glyphicon glyphicon-envelope"></span> Login
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
+                                   Forgot Your Password?
                                 </a>
                             </div>
                         </div>
 
 
-                        
+
                     </form>
 
                 </div>
                 <div class="panel-footer">
                 <small>
-                Weitere Informationen finden Sie auf den Webseiten der 
-                <a href="https://www.campus-it.th-koeln.de/go/login" target="_blank">Campus IT</a>
-                und der <a href="https://www.aai.dfn.de" target="_blank&quot;">DFN-AAI</a>
+                Weitere Informationen finden Sie auf den Webseiten der
+                <a href="#" target="_blank">Campus IT</a>
+                und der <a href="#" target="_blank&quot;">DFN-AAI</a>
                 </small>
             </div>
             </div>
