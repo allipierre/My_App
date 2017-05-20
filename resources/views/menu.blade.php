@@ -19,11 +19,11 @@
               <ul class="dropdown-menu">
                 <li><a href="datatable">Action</a></li>
                 <li><a href="student">Another action</a></li>
-                <li><a href="login">Something else here</a></li>
+                <li><a href="usersv">All users</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="insertproduct">Insert Products</a></li>
+                <li><a href="rest">Rest Services</a></li>
               </ul>
             </li>
 

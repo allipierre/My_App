@@ -11,10 +11,14 @@
       </div>
     </nav>
 
-    
+
 
 
 <div class="full" style="background-image:url('https://apex.oracle.com/pls/apex/fw_consulting/r/1373/files/static/v21/slider-2.jpg');">
+  <div class="img-overlay">
+        <button class="btn btn-md btn-success">Button</button>
+        <button class="btn btn-md btn-success">Button</button>
+      </div>
   <div class="container">
     <div class="row clearfix">
       <div style="padding: 0 0 750px 0;">
@@ -25,6 +29,7 @@
         <div class="col-xs-5 line">
           <hr>
         </div>
+
       </div>
     </div>
   </div>
