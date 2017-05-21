@@ -14,7 +14,7 @@ class RestFilable extends Model
      * @var array
      */
     protected $fillable = [
-        'ename', 'mgr','sal','Kunde','deptno'
+        'ename', 'mgr','sal','Kunde','deptno','hiredate'
     ];
 
     /**

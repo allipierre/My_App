@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+
 <html lang="en">
  @include('head')
   <body>
@@ -39,6 +45,14 @@ select {
     font-size: 2rem;
 }
 
+Pierre{
+  color: #4F8A10;
+    float: right;
+    margin-top: -59px;
+    background: #DFF2BF;
+    font-size: 2.5rem;
+    padding: 9px;
+}
 
 
     </style>
@@ -54,10 +68,29 @@ select {
     <div class="container">
       <div class="page-header">
         <h1>Sticky footer with fixed navbare</h1>
+        <?php
+        $error=Session::get('message');
+       if ($error!= null){
+       echo "<Pierre> $error </Pierre>";
+     }
+     ?>
       </div>
       <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
       <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
   </div>
+
+  <div class="container">
+    @if (count($errors) > 0)
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+  @endif
+  </div>
+
 
   <div class="container dr">
   <h2>Bootstrap Mixed Form <p class="lead">with horizontal and inline fields</p></h2>
@@ -65,7 +98,7 @@ select {
     {{ csrf_field() }}
     <div class="form-group">
       <label class="col-sm-1" for="inputName">ename</label>
-      <div class="col-sm-5"><input type="name" class="form-control"  name="ename"  value="{{ old('ename') }}" id="name" placeholder="Name"></div>
+      <div class="col-sm-5"><input type="text" class="form-control"  name="ename"  value="{{ old('ename') }}" id="name" placeholder="Name"></div>
       <label class="col-sm-1" for="categorie">Categorie</label>
       <div class="col-sm-5">
         {{ Form::select('categorie', [
@@ -99,10 +132,10 @@ select {
 
     <div class="form-group">
       <label class="col-sm-1" for="Typ">Typ</label>
-      <div class="col-sm-5"><input type="Typ" class="form-control" id="Typ" value="{{ old('enames') }}" name="enames" placeholder="Typ"></div>
+      <div class="col-sm-5"><input type="text" class="form-control" id="Typ" value="{{ old('enames') }}" name="enames" placeholder="Typ"></div>
 
       <label class="col-sm-1" for="Preis">job</label>
-      <div class="col-sm-5"><input type="Preis" class="form-control" id="job" value="{{ old('job') }}" name="job" placeholder="Preis"></div>
+      <div class="col-sm-5"><input type="text" class="form-control" id="job" value="{{ old('job') }}" name="job" placeholder="Preis"></div>
     </div>
 <!--
     <div class="form-group">
@@ -111,12 +144,12 @@ select {
     </div>
     -->
     <div class="form-group">
-      <label class="col-sm-12" for="TextArea">hiredate</label>
-      <div class="col-sm-6"><textarea class="form-control" id="Beschreibung" name="hiredate" value="{{ old('hiredate') }}" placeholder="Beschreibung"></textarea></div>
+      <label class="col-sm-12" for="TextArea">Beschreibung</label>
+      <div class="col-sm-6"><textarea class="form-control" id="Beschreibung" name="Beschreibung" value="{{ old('Beschreibung') }}" placeholder="Beschreibung"></textarea></div>
     </div>
     <div class="form-group">
       <div class="col-sm-3"><label>Regal Nr</label><input type="text" class="form-control" value="{{ old('Kunde') }}"  name="Kunde"  placeholder="Preis"></div>
-      <div class="col-sm-3"><label>Minimal Wert</label><input type="text" class="form-control" value="mgr" name="mgr" placeholder="MWert"></div>
+      <div class="col-sm-3"><label>mgr</label><input type="text" class="form-control" value="{{ old('mgr') }}" name="mgr" placeholder="MWert"></div>
     </div>
 
     <div class="form-group">
@@ -126,8 +159,20 @@ select {
     </div>
 
     <div class="form-group">
-      <label class="col-sm-1">Options</label>
-      <div class="col-sm-2"><input type="text" class="form-control" placeholder="Option 1"></div>
+      <label class="col-sm-1">hiredate</label>
+      <div class="col-sm-2">
+        <div class='input-group date'  id='calendar-demo'>
+        <input type="text" value="{{ old('hiredate', date('d-m-Y')) }}"  name="hiredate" class="form-control" placeholder="hiredate">
+        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+        </div>
+        <script type="text/javascript">
+        $('.date').datepicker({
+           format: 'dd-mm-yyyy'
+         });
+    </script>
+      </div>
       <div class="col-sm-3"><input type="text" class="form-control" placeholder="Option 2"></div>
     </div>
     <div class="form-group">

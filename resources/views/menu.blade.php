@@ -13,7 +13,7 @@
             <li class="active st"><a href="home">Home<!--<?php $user = Auth::user();   echo "$user[name]";?>--></a></li>
             <li class="st"><a href="/about">About</a></li>
             <li class="st"><a href="contact">Contact</a></li>
-            <li class="teste"><a href="teste">Test</a></li>
+            <li class="teste"><a href="itemCRUD">CRUD</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle st" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">

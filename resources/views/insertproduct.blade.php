@@ -39,6 +39,14 @@ select {
     font-size: 2rem;
 }
 
+Pierre{
+  color: #4F8A10;
+    float: right;
+    margin-top: -59px;
+    background: #DFF2BF;
+    font-size: 2.5rem;
+    padding: 9px;
+}
 
 
     </style>
@@ -50,14 +58,35 @@ select {
       </div>
     </nav>
 
+
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
         <h1>Sticky footer with fixed navbare</h1>
+        <?php
+        $error=Session::get('message');
+       if ($error!= null){
+       echo "<Pierre> $error </Pierre>";
+     }
+     ?>
       </div>
       <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
       <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
   </div>
+
+  <!-- Validdator Errors -->
+<div class="container">
+  @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+</div>
+
 
   <div class="container dr">
   <h2>Bootstrap Mixed Form <p class="lead">with horizontal and inline fields</p></h2>

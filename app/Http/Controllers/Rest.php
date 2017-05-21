@@ -10,6 +10,16 @@ class Rest extends Controller {
 
     protected function insert(Request $request)
     {
+
+      $this->validate($request, [
+       'ename' => 'required|max:10',
+       'mgr' => 'digits:2',
+       'sal' => 'digits:2',
+       'deptno' => 'digits:2',
+       'hiredate' => 'date',
+
+      ]);
+
       //extract data from the post
 //set POST variables
 $url = 'https://apex.oracle.com/pls/apex/pierrealli/hr/employees/';
@@ -17,7 +27,8 @@ $fields = array(
 	'ename' => urlencode($_POST['ename']),
 	'mgr' => urlencode($_POST['mgr']),
 	'sal' => urlencode($_POST['sal']),
-	'deptno' => urlencode($_POST['deptno'])
+	'hiredate' => urlencode($_POST['hiredate']),
+  'deptno' => urlencode($_POST['deptno'])
 );
 
 //url-ify the data for the POST

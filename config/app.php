@@ -230,7 +230,7 @@ return [
        'Datatables' => 'Yajra\Datatables\Facades\Datatables',
       'Form' => 'Collective\Html\FormFacade',
       'Html' => 'Collective\Html\HtmlFacade',
-      'Input' => Illuminate\Support\Facades\Input::class, 
+      'Input' => Illuminate\Support\Facades\Input::class,
 
     ],
 

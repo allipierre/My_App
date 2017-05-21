@@ -65,6 +65,7 @@ Route::get('insertproduct', function(){
 	return view('insertproduct');
 });
 Route::post('/insert', 'InsertProductsController@insert');
+Route::resource('itemCRUD','ItemCRUDController');
 
 
 
